@@ -1,0 +1,22 @@
+# OfflineSkin 配置
+
+# 玩家加入时自动应用匹配到的正版皮肤。
+# 只在离线模式服务器生效（在线模式的客户端本来就能拿到真皮肤）。
+auto-apply: true
+
+# 成功获取的皮肤缓存多久（分钟）。
+cache-ttl-minutes: 60
+
+# “没有同名正版号”这个结果缓存多久（分钟）。
+negative-cache-ttl-minutes: 1440
+
+# Mojang API 请求之间的最小间隔（毫秒），防限流。
+request-interval-ms: 1000
+
+# Mojang API 端点。只有 Mojang 改了接口布局才需要动。
+# name-api-url:         名字 -> UUID，主端点（HTTP 404 = 没有这个正版号）
+# fallback-name-api-url: 名字 -> UUID，主端点失败时用
+# profile-api-url:      UUID（或名字）-> 含 "textures" 属性的 profile
+name-api-url: "https://api.minecraftservices.com/minecraft/profile/lookup/name/"
+fallback-name-api-url: "https://api.mojang.com/users/profiles/minecraft/"
+profile-api-url: "https://sessionserver.mojang.com/session/minecraft/profile/"
